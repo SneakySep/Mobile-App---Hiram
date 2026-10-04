@@ -1,0 +1,5 @@
+npm notice run npx
+npm notice run create-expo-app Frontend --template default --no-install
+[?25l[36m?[39m [1mSelect an Expo SDK version:[22m [90m»[39m [90m- Use arrow-keys. Return to submit.[39m
+[36m>[39m   [36m[4mLatest (SDK 57)[39m[24m[90m - Recommended for most projects[39m
+    Other SDK version…[90m[39m

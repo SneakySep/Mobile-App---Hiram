@@ -1,0 +1,23 @@
+# Route everything that is not a real file through the front controller.
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Allow direct access to existing files.
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    RewriteRule ^ index.php [QSA,L]
+
+    # Apache strips Authorization before PHP sees it under some SAPIs
+    # (CGI/FPM). Repopulate it so the bearer token always arrives.
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+</IfModule>
+
+# The backend directory itself must never be listed or served.
+Options -Indexes
+
+<FilesMatch "\.(env|sql|md|json|lock)$">
+    Require all denied
+</FilesMatch>

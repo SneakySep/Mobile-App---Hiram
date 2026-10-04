@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "name": "Hiram",
+    "slug": "hiram",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "hiram",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "app.hiram.debt"
+    },
+    "android": {
+      "package": "app.hiram.debt",
+      "edgeToEdgeEnabled": true
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store"
+    ],
+    "experiments": {
+      "typedRoutes": false
+    }
+  }
+}
